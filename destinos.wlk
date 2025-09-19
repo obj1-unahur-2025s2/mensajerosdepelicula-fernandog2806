@@ -1,3 +1,6 @@
+// destinos.wlk
+// destinos.wlk
+// destinos.wlk
 object puenteBrooklyn {
   var habilitadoParaRecibirPaquete = true
   
@@ -6,8 +9,11 @@ object puenteBrooklyn {
   }
   
   method puedeRecibirPaquete(
-    peso
-  ) = habilitadoParaRecibirPaquete && (peso <= 1000)
+    mensajero,
+    vehiculo
+  ) = habilitadoParaRecibirPaquete && (vehiculo.pesoConMensajero(
+    mensajero
+  ) <= 1000)
 }
 
 object laMatrix {
@@ -18,6 +24,7 @@ object laMatrix {
   }
   
   method puedeRecibirPaquete(
-    puedeLlamar
-  ) = habilitadoParaRecibirPaquete && puedeLlamar
+    mensajero,
+    vehiculo
+  ) = habilitadoParaRecibirPaquete && mensajero.puedeLlamar()
 }

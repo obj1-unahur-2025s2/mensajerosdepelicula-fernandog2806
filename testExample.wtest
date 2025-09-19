@@ -6,11 +6,7 @@ describe "test 1ra parte" {
   test "ver si roberto puede llevar un solo acoplado" {
     camion.agregarAcoplados(1)
     assert.that(
-      entregarPaquete.puedeEntregarseElPaquete(
-        roberto,
-        puenteBrooklyn,
-        camion.peso()
-      )
+      entregarPaquete.puedeEntregarseElPaquete(roberto, puenteBrooklyn, camion)
     )
   }
   

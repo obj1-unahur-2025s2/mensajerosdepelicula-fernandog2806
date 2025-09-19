@@ -2,9 +2,10 @@ object entregarPaquete {
   method puedeEntregarseElPaquete(
     mensajero,
     destino,
-    valor
+    vehiculo
   ) = (mensajero.puedeEntregarPaquete() && destino.puedeRecibirPaquete(
-    valor
+    mensajero,
+    vehiculo
   )) && paquete.estaPago()
 }
 

@@ -23,12 +23,16 @@ object roberto {
 
 object bicicleta {
   method peso() = 5
+  
+  method pesoConMensajero(mensajero) = self.peso() + mensajero.peso()
 }
 
 object camion {
   var cantidadDeAcoplados = 0
   
-  method peso() = 500 + (cantidadDeAcoplados * 500)
+  method peso() = 400 + (cantidadDeAcoplados * 400)
+  
+  method pesoConMensajero(mensajero) = self.peso() + mensajero.peso()
   
   method acoplado() = cantidadDeAcoplados
   
