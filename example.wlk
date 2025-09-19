@@ -1,9 +1,19 @@
-object pepita {
-  var energy = 100
+object entregarPaquete {
+  method puedeEntregarseElPaquete(
+    mensajero,
+    destino,
+    valor
+  ) = (mensajero.puedeEntregarPaquete() && destino.puedeRecibirPaquete(
+    valor
+  )) && paquete.estaPago()
+}
 
-  method energy() = energy
-
-  method fly(minutes) {
-    energy = energy - minutes * 3
+object paquete {
+  var estaPago = true
+  
+  method estaPago() = estaPago
+  
+  method cambiarEstado() {
+    estaPago = !estaPago
   }
 }

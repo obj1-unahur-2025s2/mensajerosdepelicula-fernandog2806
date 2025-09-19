@@ -1,9 +1,25 @@
-import example.pepita
+import destinos.*
+import mensajeros.*
+import example.*
 
-describe "group of tests for pepita" {
-
-  test "pepita has initial energy" {
-    assert.equals(100, pepita.energy())
+describe "test 1ra parte" {
+  test "ver si roberto puede llevar un solo acoplado" {
+    camion.agregarAcoplados(1)
+    assert.that(
+      entregarPaquete.puedeEntregarseElPaquete(
+        roberto,
+        puenteBrooklyn,
+        camion.peso()
+      )
+    )
   }
-
+  
+  test "ver si neo con crédito no puede entregar paquete no pago a la matrix" {
+    neo.cargar(10)
+    paquete.cambiarEstado()
+    
+    assert.notThat(
+      entregarPaquete.puedeEntregarseElPaquete(neo, laMatrix, neo.puedeLlamar())
+    )
+  }
 }
